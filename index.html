@@ -7,6 +7,15 @@
   <title>Adithya Salesh | Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
+    :root {
+      --primary-color: #7fdbff;
+      --secondary-color: #1b2735;
+      --background-color: rgba(20, 24, 38, 0.85);
+      --card-color: rgba(34, 49, 63, 0.92);
+      --text-color: #fff;
+      --highlight-color: #0ff;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -17,7 +26,7 @@
       font-family: Calibri, 'Trebuchet MS', 'Segoe UI', sans-serif;
       font-size: 17px;
       background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      color: #fff;
+      color: var(--text-color);
       line-height: 1.6;
       min-height: 100vh;
       position: relative;
@@ -37,47 +46,7 @@
       pointer-events: none;
     }
 
-    #education {
-      margin-bottom: 2.5rem;
-      background: rgba(20, 24, 38, 0.85);
-      border-radius: 14px;
-      padding: 2rem;
-      box-shadow: 0 0 4px #0ff2;
-    }
-
-    #education h2,
-    #education .section-title {
-      font-size: 1.7rem;
-      margin-bottom: 1.2rem;
-      color: #7fdbff;
-      border-left: 4px solid #7fdbff;
-      padding-left: 0.7rem;
-      background: rgba(20, 24, 38, 0.95);
-      text-shadow: none;
-      border-radius: 8px;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-
-    .education-entry {
-      background: rgba(34, 49, 63, 0.92);
-      border-radius: 12px;
-      padding: 1.2rem 1rem;
-      box-shadow: 0 0 2px #0ff2;
-      margin-bottom: 1.5rem;
-    }
-
-    .education-entry h3 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.2rem;
-      color: #7fdbff;
-    }
-
-    .education-entry p {
-      margin: 0.3rem 0;
-      color: #fff;
-    }
-
+    /* Header Styles */
     header {
       text-align: center;
       padding: 2rem 0 1rem 0;
@@ -85,37 +54,89 @@
       box-shadow: none;
     }
 
-    header h1 {
+    .profile-title {
       font-size: 2.5rem;
-      color: #7fdbff;
-      /* Further reduced text glow */
-      text-shadow: 0 0 2px #0ff, 0 0 4px #0ff2;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+      
     }
 
+    .profile-name {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+     
+    }
+
+    .profile-description {
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: #222;
+    }
+
+    .btn-primary:hover {
+      background-color: #00bcd4;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: #222;
+      transform: translateY(-2px);
+    }
+
+    /* Navigation */
     nav {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 1rem;
       background: none;
       box-shadow: none;
       margin-bottom: 2rem;
+      flex-wrap: wrap;
+      padding: 0 1rem;
     }
 
     nav a {
-      color: #7fdbff;
+      color: var(--primary-color);
       text-decoration: none;
       font-weight: 600;
-      background: rgba(34, 49, 63, 0.92);
+      background: var(--card-color);
       border-radius: 8px;
       padding: 0.6rem 1.2rem;
-      margin: 0 0.2rem;
-      box-shadow: 0 0 6px #0ff2;
-      transition:
-        color 0.3s,
-        background 0.3s,
-        box-shadow 0.3s,
-        transform 0.2s;
-      display: inline-block;
+      box-shadow: 0 0 6px var(--highlight-color);
+      transition: all 0.3s ease;
       border: 1.5px solid transparent;
     }
 
@@ -124,18 +145,32 @@
       color: #fff;
       background: #32505c;
       box-shadow: 0 0 12px #1d2c31;
-      border: 1.5px solid #0ff2;
-      transform: translateY(-2px) scale(1.05);
+      border: 1.5px solid var(--highlight-color);
+      transform: translateY(-2px);
     }
 
+    /* Sections */
     section {
       margin-bottom: 2.5rem;
-      background: rgba(20, 24, 38, 0.85);
+      background: var(--background-color);
       border-radius: 14px;
       padding: 2rem;
-      box-shadow: 0 0 4px #0ff2;
+      box-shadow: 0 0 4px var(--highlight-color);
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary-color);
+      border-left: 4px solid var(--primary-color);
+      padding-left: 0.7rem;
+      background: none;
+    }
+
+    /* About Section */
     .about-highlight {
       background-color: #fdfdfd;
       padding: 2.5rem 1rem;
@@ -145,6 +180,7 @@
       line-height: 1.7;
       color: #333;
       font-family: 'Segoe UI', sans-serif;
+      border-radius: 14px;
     }
 
     .about-text p {
@@ -156,129 +192,53 @@
       margin-right: 0.4rem;
     }
 
-    .section-title {
-      font-size: 1.7rem;
-      margin-bottom: 1.2rem;
-      color: #7fdbff;
-      border-left: 4px solid #7fdbff;
-      padding-left: 0.7rem;
-      background: none;
-      text-shadow: none;
+    /* Education Section */
+    #education {
+      margin-bottom: 2.5rem;
     }
 
-    .flex-row {
-      display: flex;
-      align-items: left;
-      justify-content: left;
-      /* Center horizontally */
-      gap: 2rem;
-      flex-wrap: wrap;
-      text-align: left;
-      /* Keeps text left-aligned inside the box */
+    .education-entry {
+      background: var(--card-color);
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      box-shadow: 0 0 2px var(--highlight-color);
+      margin-bottom: 1.5rem;
     }
 
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #7fdbff;
-      box-shadow: 0 0 6px #0ff4;
-    }
-
-    #about {
-      background: rgba(20, 24, 38, 0.92);
-      border-radius: 16px;
-      box-shadow: 0 0 8px #0ff2;
-      padding: 2.5rem 1.5rem;
-      max-width: 900px;
-      margin: 2rem auto;
-    }
-
-    #about .flex-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      text-align: left;
-    }
-
-    #about .avatar {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #7fdbff;
-      box-shadow: 0 0 10px #0ff4;
-      margin-bottom: 0;
-    }
-
-    #about h3 {
-      color: #7fdbff;
-      margin-bottom: 0.7rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    #about p {
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
-      color: #e0e0e0;
-    }
-
-    #about ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem 0;
-    }
-
-    #about ul li {
-      margin-bottom: 0.4rem;
-      font-size: 1.05rem;
-      color: #b8eaff;
-      display: flex;
-      align-items: center;
-    }
-
-    #about ul li span {
-      margin-right: 0.6rem;
+    .education-entry h3 {
+      margin: 0 0 0.5rem 0;
       font-size: 1.2rem;
+      color: var(--primary-color);
     }
 
-    #about .contact-icons {
-      margin-top: 0.7rem;
+    .education-entry p {
+      margin: 0.3rem 0;
+      color: var(--text-color);
     }
 
-    #about .contact-icons a {
-      margin-right: 1rem;
-      color: #7fdbff;
-      font-size: 1.4rem;
-      transition: color 0.3s;
-    }
-
-    #about .contact-icons a:hover {
-      color: #fff;
-    }
-
+    /* Cards Layout */
     .projects,
     .certifications,
     .achievements {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
 
     .project,
     .certification,
     .achievement {
-      background: rgba(34, 49, 63, 0.92);
+      background: var(--card-color);
       border-radius: 12px;
-      padding: 1.2rem 1rem;
-      box-shadow: 0 0 2px #0ff2;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      padding: 1.5rem;
+      box-shadow: 0 0 2px var(--highlight-color);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover,
+    .certification:hover,
+    .achievement:hover {
+      transform: translateY(-5px);
     }
 
     .project h3,
@@ -286,7 +246,14 @@
     .achievement h3 {
       margin-top: 0;
       margin-bottom: 0.7rem;
-      color: #7fdbff;
+      color: var(--primary-color);
+    }
+
+    .project p,
+    .certification p,
+    .achievement p {
+      margin-bottom: 1rem;
+      color: var(--text-color);
     }
 
     .project img,
@@ -294,7 +261,7 @@
       width: 100%;
       border-radius: 8px;
       margin-bottom: 0.7rem;
-      box-shadow: 0 0 2px #0ff4;
+      box-shadow: 0 0 2px var(--highlight-color);
     }
 
     .certification img {
@@ -302,114 +269,13 @@
       height: auto;
       border-radius: 8px;
       margin-bottom: 0.7rem;
-      box-shadow: 0 0 2px #0ff4;
+      box-shadow: 0 0 2px var(--highlight-color);
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .contact-icons {
-      margin-top: 1rem;
-    }
-
-    .contact-icons a {
-      margin-right: 1rem;
-      color: #7fdbff;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    .contact-icons a:hover {
-      color: #fff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem 0 0.5rem 0;
-      background: none;
-      color: #7fdbff;
-      font-size: 0.95rem;
-      border-top: 1px solid #222;
-      margin-top: 2rem;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-
-      padding: 2rem 0.5rem;
-      /* Less horizontal padding */
-    }
-
-    /* Contact form styles */
-    .contact-form {
-      background: rgba(34, 49, 63, 0.92);
-      border-radius: 16px;
-      box-shadow: 0 0 2px #0ff2;
-      padding: 1.5rem 1rem;
-      max-width: 540px;
-      /* Increased width */
-      min-width: 340px;
-      /* Optional: ensures it's not too narrow */
-      margin: 2rem auto 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-form .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .contact-form label {
-      color: #7fdbff;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      border: 1px solid #222;
-      border-radius: 6px;
-      padding: 0.5rem;
-      background: #222a36;
-      color: #fff;
-      font-size: 1rem;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: #7fdbff;
-      background: #1b2735;
-    }
-
-    .contact-form button {
-      background: #7fdbff;
-      color: #222;
-      border: none;
-      border-radius: 6px;
-      padding: 0.6rem 1.2rem;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .contact-form button:hover {
-      background: #00bcd4;
-      color: #fff;
-    }
-
-    #form-status {
-      color: #7fdbff;
-      margin-top: 0.5rem;
-      min-height: 1.2em;
-    }
-
+    /* Contact Section */
     #contact-content-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -419,17 +285,184 @@
     }
 
     #contact-info {
-      min-width: 380px;
+      min-width: 300px;
       max-width: 420px;
+      background: var(--card-color);
+      padding: 1.5rem;
+      border-radius: 12px;
     }
+
+    #contact-info p {
+      margin-bottom: 1rem;
+    }
+
+    .contact-icons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .contact-icons a {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .contact-icons a:hover {
+      color: #fff;
+    }
+
+    .contact-form {
+      background: var(--card-color);
+      border-radius: 16px;
+      box-shadow: 0 0 2px var(--highlight-color);
+      padding: 1.5rem;
+      max-width: 540px;
+      min-width: 300px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .form-group label {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 0.7rem;
+      background: #222a36;
+      color: #fff;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background: #1b2735;
+    }
+
+    button[type="submit"] {
+      background: var(--primary-color);
+      color: #222;
+      border: none;
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    button[type="submit"]:hover {
+      background: #00bcd4;
+      color: #fff;
+    }
+
+    #form-status {
+      color: var(--primary-color);
+      margin-top: 0.5rem;
+      min-height: 1.2em;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 0 0.5rem 0;
+      background: none;
+      color: var(--primary-color);
+      font-size: 0.95rem;
+      border-top: 1px solid #222;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      nav a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .projects,
+      .certifications,
+      .achievements {
+        grid-template-columns: 1fr;
+      }
+
+      #contact-content-wrapper {
+        flex-direction: column;
+      }
+
+      #contact-info,
+      .contact-form {
+        min-width: 100%;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.2s; }
+    section:nth-child(4) { animation-delay: 0.3s; }
+    section:nth-child(5) { animation-delay: 0.4s; }
+    section:nth-child(6) { animation-delay: 0.5s; }
+    section:nth-child(7) { animation-delay: 0.6s; }
+    section:nth-child(8) { animation-delay: 0.7s; }
   </style>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <h1>Adithya Salesh</h1>
-      <p>Web Developer | Problem Solver | Tech Enthusiast</p>
+      <h1 class="profile-title">Hey, I'm Adithya</h1>
+      <h2 class="profile-name">Welcome to My Portfolio!</h2>
+      <p class="profile-description">
+        Web Developer | Problem Solver | Tech Enthusiast<br>
+        Passionate about creating beautiful, functional websites and solving real-world problems with code.
+      </p>
+      
+      <div class="action-buttons">
+       <a href="image/res.jpg" class="btn btn-primary" download="AdithyaSalesh_Resume.jpg">
+  <i class="bi bi-download"></i> Download Resume
+</a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="bi bi-chat-dots"></i> Let's Chat
+        </a>
+      </div>
     </header>
 
     <nav>
@@ -441,110 +474,107 @@
       <a href="#internship">Internship</a>
       <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
-
     </nav>
 
-    <section id="about" class="about-highlight">
+    <section id="about" >
+      <h2 class="section-title">About Me</h2>
       <div class="about-text">
-        <p><span class="emoji">👋</span> Hey, I'm <strong>Adithya Salesh</strong> , a creative developer from Kerala who loves turning ideas into beautiful, functional websites.</p>
-        <p><span class="emoji"></span> Currently pursuing my <strong>B.Tech in Computer Science</strong>, I'm passionate about solving real-world problems with clean, efficient code.</p>
-        <p><span class="emoji"></span> I'm all about responsive design, intuitive UX, and staying on top of emerging web technologies.</p>
+        <p><span class="emoji">👋</span>I'm <strong>Adithya Salesh</strong>, a creative developer from Kerala who loves turning ideas into beautiful, functional websites.</p>
+        <p><span class="emoji">🎓</span> Currently pursuing my <strong>B.Tech in Computer Science</strong>, I'm passionate about solving real-world problems with clean, efficient code.</p>
+       
       </div>
     </section>
-  <div style="text-align: center; margin: 2rem 0;">
-  <a href="image/res.jpg" download="Adithya_Salesh_Resume.jpg" class="resume-button" style="
-    display: inline-block;
-    padding: 0.8rem 1.6rem;
-    background-color: #7fdbff;
-    color: #1b2735;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-    box-shadow: 0 0 6px #0ff4;
-  ">Download Resume</a>
-</div>
 
     <section id="education">
-      <h2>Education</h2>
+      <h2 class="section-title">Education</h2>
       <div class="education-entry">
         <h3>Pursuing Bachelor of Technology in Computer Science</h3>
-        <p><strong>Amal Jyothi College of Engineering</strong>  2022-2026</p>
+        <p><strong>Amal Jyothi College of Engineering</strong> | 2022-2026</p>
+        <p>Expected Graduation: May 2026</p>
       </div>
     </section>
+
     <section id="skills">
       <h2 class="section-title">Skills</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
         <div class="project">
           <div>
-            <h3 style="margin-bottom: 0.5rem; color: #7fdbff;">Programming Languages</h3>
-            <ul>
-              <li>C</li>
-              <li>Java</li>
-              <li>Python</li>
+            <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Programming Languages</h3>
+            <ul style="list-style: none;">
+              <li><i class="bi bi-check-circle"></i> C</li>
+              <li><i class="bi bi-check-circle"></i> Java</li>
+              <li><i class="bi bi-check-circle"></i> Python</li>
             </ul>
           </div>
         </div>
         <div class="project">
           <div>
-            <h3 style="margin-bottom: 0.5rem; color: #7fdbff;">Frontend</h3>
-            <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
+            <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Frontend</h3>
+            <ul style="list-style: none;">
+              <li><i class="bi bi-check-circle"></i> HTML</li>
+              <li><i class="bi bi-check-circle"></i> CSS</li>
+              <li><i class="bi bi-check-circle"></i> JavaScript</li>
             </ul>
           </div>
         </div>
         <div class="project">
           <div>
-            <h3 style="margin-bottom: 0.5rem; color: #7fdbff;">Backend</h3>
-            <ul>
-              <li>Django</li>
-              <li>RESTful APIs</li>
-              <li>SQL</li>
-              <li>MongoDB</li>
+            <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Backend</h3>
+            <ul style="list-style: none;">
+              <li><i class="bi bi-check-circle"></i> Django</li>
+              <li><i class="bi bi-check-circle"></i> RESTful APIs</li>
+              <li><i class="bi bi-check-circle"></i> SQL</li>
+              <li><i class="bi bi-check-circle"></i> MongoDB</li>
             </ul>
           </div>
         </div>
         <div class="project">
           <div>
-            <h3 style="margin-bottom: 0.5rem; color: #7fdbff;">Tools & Others</h3>
-            <ul>
-              <li>GitHub</li>
-              <li>Bitbucket</li>
-              <li>Postman</li>
-              <li>VS Code</li>
+            <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Tools & Others</h3>
+            <ul style="list-style: none;">
+              <li><i class="bi bi-check-circle"></i> GitHub</li>
+              <li><i class="bi bi-check-circle"></i> Bitbucket</li>
+              <li><i class="bi bi-check-circle"></i> Postman</li>
+              <li><i class="bi bi-check-circle"></i> VS Code</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+
     <section id="projects">
       <h2 class="section-title">Projects</h2>
       <div class="projects">
         <div class="project">
           <h3>MicroGig</h3>
           <p>A freelancing platform tailored for students and small-scale gigs. Built using React and Node.js with real-time job posting and bidding features.</p>
-          <a href="https://github.com/adithyasalesh/Microgig" target="_blank" title="View on GitHub">
-            <i class="bi bi-github" style="font-size: 1.5rem; color: #7fdbff;"></i>
-          </a>
+          <div class="project-links">
+            <a href="https://github.com/adithyasalesh/Microgig" target="_blank" title="View on GitHub">
+              <i class="bi bi-github"></i> 
+            </a>
+          </div>
         </div>
         <div class="project">
           <h3>E-Shop</h3>
           <p>An e-commerce web application with admin dashboard, product management, cart, and secure checkout. Developed using Django, HTML, CSS, and JavaScript.</p>
-          <a href="https://bitbucket.org/adithyasalesh/ecommersewebsite/src/main/" target="_blank" title="View on Bitbucket">
-            <svg width="1.5em" height="1.5em" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="6" fill="#2684FF" />
-              <path d="M7.2 7.6c-.3 0-.5.2-.6.5L4.1 23.2c0 .2 0 .3.1.5.1.1.3.2.5.2h22.7c.2 0 .4-.1.5-.2.1-.1.2-.3.1-.5l-2.5-15.1c0-.3-.3-.5-.6-.5H7.2zm13.7 10.6h-9.8l-.6-3.7h11l-.6 3.7z" fill="#fff" />
-            </svg>
-          </a>
+          <div class="project-links">
+            <a href="https://bitbucket.org/adithyasalesh/ecommersewebsite/src/main/" target="_blank" title="View on Bitbucket">
+              <svg width="1em" height="1em" viewBox="0 0 32 32" fill="none" style="vertical-align: middle; margin-right: 5px;">
+                <rect width="32" height="32" rx="6" fill="#2684FF" />
+                <path d="M7.2 7.6c-.3 0-.5.2-.6.5L4.1 23.2c0 .2 0 .3.1.5.1.1.3.2.5.2h22.7c.2 0 .4-.1.5-.2.1-.1.2-.3.1-.5l-2.5-15.1c0-.3-.3-.5-.6-.5H7.2zm13.7 10.6h-9.8l-.6-3.7h11l-.6 3.7z" fill="#fff" />
+              </svg>
+             
+            </a>
+          </div>
         </div>
         <div class="project">
           <h3>GUI Pass Assembler</h3>
-          <p>A Java-based GUI application that performs pass1 and pass2 of a 2 pass assembler</p>
-          <a href="https://github.com/adithyasalesh/gui-pass-assembler" target="_blank" title="View on GitHub">
-            <i class="bi bi-github" style="font-size: 1.5rem; color: #7fdbff;"></i>
-          </a>
+          <p>A Java-based GUI application that performs pass1 and pass2 of a 2 pass assembler with visualization of symbol tables and intermediate code.</p>
+          <div class="project-links">
+            <a href="https://github.com/adithyasalesh/gui-pass-assembler" target="_blank" title="View on GitHub">
+              <i class="bi bi-github"></i> 
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -553,17 +583,17 @@
       <h2 class="section-title">Certifications</h2>
       <div class="certifications">
         <div class="certification">
-          <img src="image\ml nptel.jpg" alt="NPTEL Machine Learning Certificate">
+          <img src="image/ml nptel.jpg" alt="NPTEL Machine Learning Certificate">
           <h3>Introduction to Machine Learning</h3>
           <p>Successfully completed a 12-week NPTEL course by IIT Madras (Jul–Oct 2024). Consolidated score: <strong>55%</strong></p>
         </div>
         <div class="certification">
-          <img src="image\Problem Solving Through Programming In C_page-0001.jpg" alt="NPTEL problem solving through programming in C Certificate">
+          <img src="image/Problem Solving Through Programming In C_page-0001.jpg" alt="NPTEL problem solving through programming in C Certificate">
           <h3>Problem Solving Through Programming in C</h3>
           <p>Completed a 12-week NPTEL course (Jul–Oct 2023). Consolidated score: <strong>68%</strong></p>
         </div>
         <div class="certification">
-          <img src="image\oracle cert_page-0001.jpg" alt="Oracle Cloud AI Foundations Associate Certificate">
+          <img src="image/oracle cert_page-0001.jpg" alt="Oracle Cloud AI Foundations Associate Certificate">
           <h3>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
           <p>Issued by Oracle on <strong>July 07, 2025</strong><br>
             Credential ID: <strong>101978885OCI25AICFA</strong>
@@ -572,7 +602,7 @@
       </div>
     </section>
 
-    <section id="internship">
+     <section id="internship">
       <h2 class="section-title">Internship</h2>
       <div class="projects">
         <div class="project">
@@ -593,7 +623,7 @@
           <h3>Research Publication – NACORE'25</h3>
           <p>
             <strong>Year:</strong> 2025<br>
-            Published a research paper titled <em>“Revolutionizing Student Employment through Rise of Unskilled Task Platforms”</em> in <strong>The International Journal on Emerging Research Areas (IJERA)</strong> as part of NACORE’25.
+            Published a research paper titled <em>"Revolutionizing Student Employment through Rise of Unskilled Task Platforms"</em> in <strong>The International Journal on Emerging Research Areas (IJERA)</strong> as part of NACORE'25.
           </p>
         </div>
         <div class="achievement">
@@ -601,11 +631,10 @@
           <p>
             Participated in several national and international hackathons including:
             <ul style="margin-top: 0.5rem; padding-left: 1.2rem;">
-              <li><strong>NASA Space Apps Challenge</strong></li>
-              <li><strong>Smart India Hackathon (SIH)</strong></li>
+              <li><strong>NASA Space Apps Challenge</strong> </li>
+              <li><strong>Smart India Hackathon (SIH)</strong> </li>
               <li><strong>Hackfest 2024</strong></li>
             </ul>
-            Contributed to innovative tech solutions across domains like space, education, and sustainability.
           </p>
         </div>
         <div class="achievement">
@@ -618,20 +647,25 @@
       </div>
     </section>
 
-
-
     <section id="contact">
       <h2 class="section-title">Contact</h2>
       <div id="contact-content-wrapper">
         <div id="contact-info">
-          <p>Email: <a href="mailto:adithyasalesh@gmail.com" style="color: #fff;">adithyasalesh@gmail.com</a></p>
-          <p>Phone: +91 75590 15724</p>
+          <h3>Get In Touch</h3>
+          <p><i class="bi bi-envelope"></i> <a href="mailto:adithyasalesh@gmail.com" style="color: var(--primary-color);">adithyasalesh@gmail.com</a></p>
+          <p><i class="bi bi-phone"></i> +91 75590 15724</p>
+          <p><i class="bi bi-geo-alt"></i> Kerala, India</p>
           <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/adithya-salesh-176519288/" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/adithyasalesh" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/adithya-salesh-176519288/" target="_blank" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com/adithyasalesh" target="_blank" aria-label="GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+          
           </div>
         </div>
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" netlify>
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -642,36 +676,85 @@
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           <button type="submit">Send Message</button>
           <p id="form-status"></p>
         </form>
       </div>
-      <script>
-        // Simple client-side form handler (shows a message, does not send email)
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-          e.preventDefault();
-          document.getElementById('form-status').textContent = "Thank you! Your message has been received.";
-          this.reset();
-        });
-      </script>
     </section>
 
     <footer>
-      &copy; 2025 Adithya Salesh. All rights reserved.
+      <p>&copy; 2025 Adithya Salesh. All rights reserved.</p>
+      <p>Made with <i class="bi bi-heart-fill" style="color: #ff6b6b;"></i> and <i class="bi bi-cup-hot-fill" style="color: #f06595;"></i></p>
     </footer>
   </div>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        
+        // Update active link
+        document.querySelectorAll('nav a').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+
+    // Form handling
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        
+        try {
+          formStatus.textContent = "Sending message...";
+          
+          // For Netlify Forms
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+          });
+          
+          if (response.ok) {
+            formStatus.textContent = "Thank you! Your message has been sent successfully.";
+            contactForm.reset();
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          formStatus.textContent = "There was a problem sending your message. Please try again later.";
+        }
+      });
+    }
+
+    // Add animation class when scrolling
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
-<script>
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
